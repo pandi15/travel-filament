@@ -23,7 +23,11 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->hasRole($this->roles()->first()->name);
+        if ($this->roles()->first()) {
+            return $this->hasRole($this->roles()->first()->name);
+        }
+
+        return false;
     }
     /**
      * The attributes that are mass assignable.
