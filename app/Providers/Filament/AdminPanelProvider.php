@@ -71,6 +71,6 @@ class AdminPanelProvider extends PanelProvider
                     'default' => 1,
                     'sm' => 2,
                 ]),
-            ]);;
+            ]);
     }
 }

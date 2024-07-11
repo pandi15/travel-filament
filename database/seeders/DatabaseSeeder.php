@@ -15,9 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Super Admin',
+        $developer = User::factory()->create([
+            'name' => 'Developer',
+            'email' => 'developer@travel.com',
+        ]);
+
+        $admin = User::factory()->create([
+            'name' => 'Admin',
             'email' => 'admin@travel.com',
         ]);
+
+        $developer->assignRole('developer');
+        $admin->assignRole('admin');
     }
 }
